@@ -14,6 +14,7 @@
 #include "Vector.h"
 #include "StringBad.h"
 #include "Queue.h"
+#include "TableTennisPlayer.h"
 
 using namespace std;
 
@@ -278,11 +279,38 @@ void testQueue()
 	}
 
 	cout << "Done!\n";
+}
 
+void testTableTennisPlayer()
+{
+	using std::cout;
+
+	TableTennisPlayer player1("Chunck", "Blizzard", true);
+	TableTennisPlayer player2("Tara", "Boomdea", false);
+
+	player1.name();
+	if (player1.isHasTable())
+	{
+		cout << ": has a table.\n";
+	}
+	else
+	{
+		cout << ": hasn't a table.\n";
+	}
+
+	player2.name();
+	if (player2.isHasTable())
+	{
+		cout << ": has a table.\n";
+	}
+	else
+	{
+		cout << ": hasn't a table.\n";
+	}
 }
 
 int main()
 {
-	testQueue();
+	testTableTennisPlayer();
 	return 0;
 }
