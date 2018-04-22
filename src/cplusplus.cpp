@@ -15,6 +15,8 @@
 #include "StringBad.h"
 #include "Queue.h"
 #include "TableTennisPlayer.h"
+#include "Brass.h"
+#include "BrassPlus.h"
 
 using namespace std;
 
@@ -309,8 +311,85 @@ void testTableTennisPlayer()
 	}
 }
 
+void testBrass()
+{
+	Brass piggy("Porcelot Pigg", 381299, 4000.00);
+	BrassPlus hoggy("Horatio Hogg", 382288, 3000.00);
+	piggy.viewAcct();
+	cout << endl;
+	hoggy.viewAcct();
+	cout << endl;
+	cout << "depositing $1000 into the Hogg Account: \n";
+	hoggy.deposit(1000.00);
+	cout << "New balance: $" << hoggy.getBalance() << endl;
+	cout << "withdrawing $4200 from the pigg Account: \n";
+	piggy.withdraw(4200.00);
+	cout << "Pigg account balance: $" << piggy.getBalance() << endl;
+	cout << "Withdrawing $4200 from the hoggy Account: \n";
+	hoggy.withdraw(4200.00);
+	hoggy.viewAcct();
+}
+
+void testVirtualBrass()
+{
+	const int CLIENTS = 4;
+	const int LEN = 40;
+
+	Brass *p_clients[CLIENTS];
+	for (int i = 0; i < CLIENTS; i++)
+	{
+		char temp[LEN];
+		long tempnum;
+		double tempbal;
+		char kind;
+
+		cout << "Enter client's name: ";
+		cin.getline(temp, LEN);
+		cout << "Enter client's account number: ";
+		cin >> tempnum;
+		cout << "Enter opening balance: $";
+		cin >> tempbal;
+		cout << "Enter 1 for Brass Account or 2 for BrassPlus Account: ";
+
+		while (cin >> kind && (kind != '1' && kind != '2'))
+		{
+			cout << "Enter either 1 or 2:";
+		}
+
+		if ('1' == kind)
+		{
+			p_clients[i] = new Brass(temp, tempnum, tempbal);
+		}
+		else
+		{
+			double tmax, trate;
+			cout << "Enter the overdraft limit: $";
+			cin >> tmax;
+			cout << "Enter the interst rate as a decimal fraction: ";
+			cin >> trate;
+			p_clients[i] = new BrassPlus(temp, tempnum, tempbal, tmax, trate);
+		}
+
+		while (cin.get() != '\n') continue;
+	}
+	cout << endl;
+
+	for (int i = 0; i < CLIENTS; ++i)
+	{
+		p_clients[i]->viewAcct();
+		cout << endl;
+	}
+
+	for (int i = 0; i < CLIENTS; ++i)
+	{
+		delete p_clients[i];
+	}
+
+	cout << "Done.\n";
+}
+
 int main()
 {
-	testTableTennisPlayer();
+	testVirtualBrass();
 	return 0;
 }
