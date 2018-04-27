@@ -17,6 +17,7 @@
 #include "TableTennisPlayer.h"
 #include "Brass.h"
 #include "BrassPlus.h"
+#include "Student.h"
 
 using namespace std;
 
@@ -388,8 +389,55 @@ void testVirtualBrass()
 	cout << "Done.\n";
 }
 
+void set(Student &sa, int n)
+{
+	cout << "Please enter the student's name:";
+	getline(cin, sa);
+	cout << "Please enter " << n << " quiz scores:\n";
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> sa[i];
+	}
+
+	while (cin.get() != '\n')
+	{
+		continue;
+	}
+}
+
+void testStudent()
+{
+	const int pupils = 3;
+	const int quizzes = 5;
+
+	Student ada[pupils] = {
+			Student(quizzes), Student(quizzes), Student(quizzes)
+	};
+
+	for (int i = 0; i < pupils; ++i)
+	{
+		set(ada[i], quizzes);
+	}
+
+	cout << "\nStudent List:\n";
+	for (int i = 0; i < pupils; ++i)
+	{
+		cout << ada[i].name() << endl;
+	}
+	cout << "\nResults:";
+	for (int i = 0; i < pupils; ++i)
+	{
+		cout << endl << ada[i];
+		cout << "average: " << ada[i].average() << endl;
+	}
+
+	cout << "Done" << endl;
+
+	return;
+}
+
 int main()
 {
-	testVirtualBrass();
+	testStudent();
 	return 0;
 }
