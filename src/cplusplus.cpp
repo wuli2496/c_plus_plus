@@ -18,6 +18,7 @@
 #include "Brass.h"
 #include "BrassPlus.h"
 #include "Student.h"
+#include "worker.h"
 
 using namespace std;
 
@@ -436,8 +437,98 @@ void testStudent()
 	return;
 }
 
+class Base
+{
+public:
+	void NoVirtualFun()
+	{
+		cout << "Base::NoVirtualFun()" << endl;
+	}
+
+	virtual void VirtualFun()
+	{
+		cout << "Base::VirtualFun()" << endl;
+	}
+
+	virtual ~Base() {}
+};
+
+class ClassA
+{
+private:
+	Base* m_pBase;
+public:
+	ClassA():m_pBase(NULL) {}
+
+	void AddBase(Base* pBase)
+	{
+		m_pBase = pBase;
+	}
+
+	void print()
+	{
+		m_pBase->VirtualFun();
+	}
+
+};
+
+class Child: private Base
+{
+private:
+	virtual void VirtualFun()
+	{
+		cout << "Child::VirtualFun()" << endl;
+	}
+
+public:
+	Child(ClassA *pClassA)
+	{
+		m_pClassA = pClassA;
+		m_pClassA->AddBase(this);
+	}
+
+private:
+	ClassA* m_pClassA;
+};
+
+void testPrivateVirtual()
+{
+	ClassA *classA = new ClassA();
+	Child *chd = new Child(classA);
+
+
+	classA->print();
+
+	delete classA;
+	delete chd;
+}
+
+const int LIM = 4;
+
+void testMI()
+{
+	Waiter bob("Bob Apple", 314L, 5);
+	Singer bev("Beverly Hills", 522L, 3);
+	Waiter w_temp;
+	Singer s_temp;
+
+	Worker* pw[LIM] = {&bob, &bev, &w_temp, &s_temp};
+
+	int i;
+	for (i = 2; i < LIM; i++)
+	{
+		pw[i]->Set();
+	}
+
+	for (i = 0; i < LIM; i++)
+	{
+		pw[i]->Show();
+		cout << endl;
+	}
+}
+
 int main()
 {
-	testStudent();
+	testMI();
 	return 0;
 }
