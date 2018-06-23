@@ -19,6 +19,7 @@
 #include "BrassPlus.h"
 #include "Student.h"
 #include "worker.h"
+#include "objModel.h"
 
 using namespace std;
 
@@ -527,8 +528,10 @@ void testMI()
 	}
 }
 
+
 int main()
 {
-	testMI();
+	testObjModel();
 	return 0;
 }
+
