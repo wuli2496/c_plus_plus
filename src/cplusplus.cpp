@@ -20,6 +20,9 @@
 #include "Student.h"
 #include "worker.h"
 #include "objModel.h"
+#include "MyClass.h"
+#include "ExceptTest.h"
+#include "utilityTest.h"
 
 using namespace std;
 
@@ -528,10 +531,18 @@ void testMI()
 	}
 }
 
+void f()
+{
+	MyClass<double> d;
+	MyClass<int> i;
+
+	d.assign(d);
+	d.assign(i);
+}
 
 int main()
 {
-	testObjModel();
+	numericLimitTest();
 	return 0;
 }
 
