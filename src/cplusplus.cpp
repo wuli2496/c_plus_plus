@@ -23,6 +23,7 @@
 #include "MyClass.h"
 #include "ExceptTest.h"
 #include "utilityTest.h"
+#include "seqContainer.h"
 
 using namespace std;
 
@@ -542,7 +543,7 @@ void f()
 
 int main()
 {
-	numericLimitTest();
+	testList();
 	return 0;
 }
 
