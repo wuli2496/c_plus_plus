@@ -24,6 +24,13 @@
 #include "ExceptTest.h"
 #include "utilityTest.h"
 #include "seqContainer.h"
+#include "assoContainer.h"
+#include "stlAlgo.h"
+#include "stlIterator.h"
+#include "stlManAlgo.h"
+#include "stlDefFun.h"
+#include "stlFunAsAlgoArg.h"
+#include "stlFunObj.h"
 
 using namespace std;
 
@@ -543,7 +550,7 @@ void f()
 
 int main()
 {
-	testList();
+	testFunObj();
 	return 0;
 }
 
