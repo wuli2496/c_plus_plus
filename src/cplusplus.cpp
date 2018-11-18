@@ -31,6 +31,7 @@
 #include "stlDefFun.h"
 #include "stlFunAsAlgoArg.h"
 #include "stlFunObj.h"
+#include "stlVec.h"
 
 using namespace std;
 
@@ -550,7 +551,7 @@ void f()
 
 int main()
 {
-	testFunObj();
+	testStlVec();
 	return 0;
 }
 
