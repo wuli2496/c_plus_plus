@@ -32,6 +32,7 @@
 #include "stlFunAsAlgoArg.h"
 #include "stlFunObj.h"
 #include "stlVec.h"
+#include "stlDeque.h"
 
 using namespace std;
 
@@ -551,7 +552,7 @@ void f()
 
 int main()
 {
-	testStlVec();
+	testStlDeque();
 	return 0;
 }
 
