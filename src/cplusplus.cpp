@@ -33,6 +33,7 @@
 #include "stlFunObj.h"
 #include "stlVec.h"
 #include "stlDeque.h"
+#include "stlList.h"
 
 using namespace std;
 
@@ -552,7 +553,7 @@ void f()
 
 int main()
 {
-	testStlDeque();
+	testStlList();
 	return 0;
 }
 
