@@ -7,7 +7,9 @@
 
 #include "UnionAffiliation.h"
 
-UnionAffiliation::UnionAffiliation() {
+UnionAffiliation::UnionAffiliation(int memberId, double dues)
+: itsMemberId(memberId), itsDues(dues)
+{
 	// TODO Auto-generated constructor stub
 
 }
@@ -24,5 +26,10 @@ double UnionAffiliation::CalculateDeductions(Paycheck& pc)
 void UnionAffiliation::AddServiceCharge(Date date, double charge)
 {
 
+}
+
+int UnionAffiliation::GetMemberId()
+{
+	return itsMemberId;
 }
 

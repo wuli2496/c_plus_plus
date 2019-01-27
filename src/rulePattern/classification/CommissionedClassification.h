@@ -10,10 +10,16 @@
 
 #include "intf/PaymentClassification.h"
 
+class SalesReceipt;
+
 class CommissionedClassification: public PaymentClassification {
 public:
 	CommissionedClassification();
 	virtual ~CommissionedClassification();
+
+	void AddSalesReceipt(SalesReceipt* sr);
+
+	virtual double CalculatePay(Paycheck&);
 };
 
 #endif /* RULEPATTERN_CLASSIFICATION_COMMISSIONEDCLASSIFICATION_H_ */

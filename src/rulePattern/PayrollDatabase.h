@@ -24,6 +24,8 @@ public:
 	}
 
 	Employee* GetUnionMember(int itsMemberId);
+	void AddUnionMember(int memberId, Employee* e);
+	void RemoveUnionMember(int memberId);
 
 private:
 	std::map<int, Employee*> itsEmployees;

@@ -14,6 +14,9 @@ class BlweeklySchedule: public PaymentSchedule {
 public:
 	BlweeklySchedule();
 	virtual ~BlweeklySchedule();
+
+	virtual bool IsPayDate(const Date&) const;
+	virtual Date GetPayPeriodStartDate(const Date&);
 };
 
 #endif /* RULEPATTERN_BLWEEKLYSCHEDULE_H_ */

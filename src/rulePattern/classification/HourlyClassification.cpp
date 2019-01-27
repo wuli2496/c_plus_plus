@@ -7,7 +7,9 @@
 
 #include "HourlyClassification.h"
 
-HourlyClassification::HourlyClassification() {
+HourlyClassification::HourlyClassification(double hourlyRate)
+: itsHourlyRate(hourlyRate)
+{
 	// TODO Auto-generated constructor stub
 
 }

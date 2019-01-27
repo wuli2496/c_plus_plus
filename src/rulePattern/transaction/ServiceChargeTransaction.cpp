@@ -31,7 +31,7 @@ void ServiceChargeTransaction::Execute()
 	Employee* e = GpayrollDatabase.GetUnionMember(itsMemberId);
 	Affiliation* af = e->GetAffiliation();
 	if (UnionAffiliation* uaf = dynamic_cast<UnionAffiliation*>(af)) {
-
+		uaf->AddServiceCharge(itsDate, itsCharge);
 	}
 }
 

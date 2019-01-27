@@ -14,6 +14,9 @@ class WeeklySchedule: public PaymentSchedule {
 public:
 	WeeklySchedule();
 	virtual ~WeeklySchedule();
+
+	virtual bool IsPayDate(const Date&) const;
+	virtual Date GetPayPeriodStartDate(const Date&);
 };
 
 #endif /* RULEPATTERN_WEEKLYSCHEDULE_H_ */

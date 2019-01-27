@@ -16,3 +16,12 @@ CommissionedClassification::~CommissionedClassification() {
 	// TODO Auto-generated destructor stub
 }
 
+void CommissionedClassification::AddSalesReceipt(SalesReceipt* sr)
+{
+
+}
+
+double CommissionedClassification::CalculatePay(Paycheck& pc)
+{
+	return 0;
+}

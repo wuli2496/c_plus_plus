@@ -13,11 +13,17 @@
 
 class UnionAffiliation: public Affiliation {
 public:
-	UnionAffiliation();
+	UnionAffiliation(int memberId, double dues);
 	virtual ~UnionAffiliation();
 
 	double CalculateDeductions(Paycheck&);
 	void AddServiceCharge(Date date, double charge);
+
+	int GetMemberId();
+
+private:
+	int itsMemberId;
+	double itsDues;
 };
 
 #endif /* RULEPATTERN_AFFILIATION_UNIONAFFILIATION_H_ */

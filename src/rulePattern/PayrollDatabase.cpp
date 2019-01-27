@@ -34,3 +34,18 @@ Employee* PayrollDatabase::GetUnionMember(int memberId)
 	return itsMembers[memberId];
 }
 
+void PayrollDatabase::AddUnionMember(int memberId, Employee* e)
+{
+	itsMembers[memberId] = e;
+}
+
+void PayrollDatabase::RemoveUnionMember(int memberId)
+{
+	std::map<int, Employee*>::iterator it = itsMembers.find(memberId);
+	if (it != itsMembers.end())
+	{
+		delete it->second;
+		itsMembers.erase(it);
+
+	}
+}

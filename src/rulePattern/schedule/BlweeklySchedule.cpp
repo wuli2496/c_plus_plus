@@ -16,3 +16,12 @@ BlweeklySchedule::~BlweeklySchedule() {
 	// TODO Auto-generated destructor stub
 }
 
+bool BlweeklySchedule::IsPayDate(const Date&) const
+{
+	return false;
+}
+
+Date BlweeklySchedule::GetPayPeriodStartDate(const Date&)
+{
+	return Date(0);
+}

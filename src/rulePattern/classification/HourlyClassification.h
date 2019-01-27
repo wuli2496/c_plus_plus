@@ -14,12 +14,15 @@ class TimeCard;
 
 class HourlyClassification: public PaymentClassification {
 public:
-	HourlyClassification();
+	HourlyClassification(double hourlyRate);
 	virtual ~HourlyClassification();
 
 	void AddTimeCard(TimeCard* tc);
 
 	double CalculatePay(Paycheck&);
+
+private:
+	double itsHourlyRate;
 };
 
 #endif /* RULEPATTERN_CLASSIFICATION_HOURLYCLASSIFICATION_H_ */

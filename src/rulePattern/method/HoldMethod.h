@@ -15,7 +15,7 @@ public:
 	HoldMethod();
 	virtual ~HoldMethod();
 
-	void Pay(Paycheck&);
+	virtual void Pay(Paycheck&);
 };
 
 #endif /* RULEPATTERN_HOLDMETHOD_H_ */

@@ -15,8 +15,8 @@ public:
 	MonthlySchedule();
 	virtual ~MonthlySchedule();
 
-	bool IsPayDate(const Date&) const;
-	Date GetPayPeriodStartDate(const Date&);
+	virtual bool IsPayDate(const Date&) const;
+	virtual Date GetPayPeriodStartDate(const Date&);
 };
 
 #endif /* RULEPATTERN_MONTHLYSCHEDULE_H_ */

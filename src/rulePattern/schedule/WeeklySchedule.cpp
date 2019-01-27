@@ -16,3 +16,12 @@ WeeklySchedule::~WeeklySchedule() {
 	// TODO Auto-generated destructor stub
 }
 
+bool WeeklySchedule::IsPayDate(const Date&) const
+{
+	return false;
+}
+
+Date WeeklySchedule::GetPayPeriodStartDate(const Date&)
+{
+	return Date(0);
+}
