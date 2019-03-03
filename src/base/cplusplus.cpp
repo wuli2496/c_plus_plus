@@ -34,6 +34,7 @@
 #include "stlVec.h"
 #include "stlDeque.h"
 #include "stlList.h"
+#include "stlSet.h"
 
 using namespace std;
 
@@ -553,7 +554,7 @@ void f()
 
 int main()
 {
-	testStlList();
+	testStlSet();
 	return 0;
 }
 
