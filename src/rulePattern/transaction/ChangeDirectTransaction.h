@@ -12,7 +12,7 @@
 
 class ChangeDirectTransaction: public ChangeMethodTransaction {
 public:
-	ChangeDirectTransaction();
+	ChangeDirectTransaction(int empId);
 	virtual ~ChangeDirectTransaction();
 
 	virtual PaymentMethod* GetMethod() const;

@@ -12,7 +12,7 @@
 
 class ChangeMailTransaction: public ChangeMethodTransaction {
 public:
-	ChangeMailTransaction();
+	ChangeMailTransaction(int empid);
 	virtual ~ChangeMailTransaction();
 
 	virtual PaymentMethod* GetMethod() const;

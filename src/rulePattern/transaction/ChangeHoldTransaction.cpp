@@ -8,7 +8,8 @@
 #include "ChangeHoldTransaction.h"
 #include "../method/HoldMethod.h"
 
-ChangeHoldTransaction::ChangeHoldTransaction() {
+ChangeHoldTransaction::ChangeHoldTransaction(int empId) : ChangeMethodTransaction(empId)
+{
 	// TODO Auto-generated constructor stub
 
 }

@@ -18,10 +18,10 @@ Employee::Employee(int empId, std::string name, std::string address)
 	:itsEmpid(empId),
 	 itsName(name),
 	 itsAddress(address),
-	 itsAffiliation(new NoAffiliation()),
 	 itsClassification(0),
 	 itsSchedule(0),
-	 itsPaymentMethod(0)
+	 itsPaymentMethod(0),
+	 itsAffiliation(new NoAffiliation())
 {
 	// TODO Auto-generated constructor stub
 

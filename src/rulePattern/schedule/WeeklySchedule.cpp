@@ -6,7 +6,6 @@
  */
 
 #include "WeeklySchedule.h"
-
 WeeklySchedule::WeeklySchedule() {
 	// TODO Auto-generated constructor stub
 

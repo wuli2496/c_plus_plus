@@ -30,5 +30,5 @@ Affiliation* ChangeMemberTransaction::GetAffiliation() const
 
 void ChangeMemberTransaction::RecordMembership(Employee* e)
 {
-	GpayrollDatabase.AddUnionMember(itsMemberId, e)
+	GpayrollDatabase.AddUnionMember(itsMemberId, e);
 }

@@ -12,7 +12,7 @@
 
 class ChangeHoldTransaction: public ChangeMethodTransaction {
 public:
-	ChangeHoldTransaction();
+	ChangeHoldTransaction(int empId);
 	virtual ~ChangeHoldTransaction();
 
 	virtual PaymentMethod* GetMethod() const;

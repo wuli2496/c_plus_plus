@@ -7,8 +7,7 @@
 
 #ifndef RULEPATTERN_PAYMENTSCHEDULE_H_
 #define RULEPATTERN_PAYMENTSCHEDULE_H_
-
-class Date;
+#include "../../Date.h"
 
 class PaymentSchedule {
 public:

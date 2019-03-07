@@ -8,7 +8,9 @@
 #include "ChangeDirectTransaction.h"
 #include "../method/DirectMethod.h"
 
-ChangeDirectTransaction::ChangeDirectTransaction() {
+ChangeDirectTransaction::ChangeDirectTransaction(int empId)
+: ChangeMethodTransaction(empId)
+{
 	// TODO Auto-generated constructor stub
 
 }

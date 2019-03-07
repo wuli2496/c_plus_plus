@@ -8,7 +8,8 @@
 #include "ChangeMailTransaction.h"
 #include "../method/MailMethod.h"
 
-ChangeMailTransaction::ChangeMailTransaction() {
+ChangeMailTransaction::ChangeMailTransaction(int empId) : ChangeMethodTransaction(empId)
+{
 	// TODO Auto-generated constructor stub
 
 }
