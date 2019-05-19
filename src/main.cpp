@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : cplusplus.cpp
-// Author      : 
+// Author      :
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
@@ -8,33 +8,37 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "stock.h"
-#include "MyTime.h"
+#include "base/stock.h"
+#include "base/MyTime.h"
 #include <iostream>
-#include "Vector.h"
-#include "StringBad.h"
-#include "Queue.h"
-#include "TableTennisPlayer.h"
-#include "Brass.h"
-#include "BrassPlus.h"
-#include "Student.h"
-#include "worker.h"
-#include "objModel.h"
-#include "MyClass.h"
-#include "ExceptTest.h"
-#include "utilityTest.h"
-#include "seqContainer.h"
-#include "assoContainer.h"
-#include "stlAlgo.h"
-#include "stlIterator.h"
-#include "stlManAlgo.h"
-#include "stlDefFun.h"
-#include "stlFunAsAlgoArg.h"
-#include "stlFunObj.h"
-#include "stlVec.h"
-#include "stlDeque.h"
-#include "stlList.h"
-#include "stlSet.h"
+#include "base/Vector.h"
+#include "base/StringBad.h"
+#include "base/Queue.h"
+#include "base/TableTennisPlayer.h"
+#include "base/Brass.h"
+#include "base/BrassPlus.h"
+#include "base/Student.h"
+#include "base/worker.h"
+#include "base/objModel.h"
+#include "base/MyClass.h"
+#include "base/ExceptTest.h"
+#include "base/utilityTest.h"
+#include "base/seqContainer.h"
+#include "base/assoContainer.h"
+#include "base/stlAlgo.h"
+#include "base/stlIterator.h"
+#include "base/stlManAlgo.h"
+#include "base/stlDefFun.h"
+#include "base/stlFunAsAlgoArg.h"
+#include "base/stlFunObj.h"
+#include "base/stlVec.h"
+#include "base/stlDeque.h"
+#include "base/stlList.h"
+#include "base/stlSet.h"
+#include "design/convertibility.h"
+#include <vector>
+#include "base/funObj.h"
+#include "base/myvalarray.h"
 
 using namespace std;
 
@@ -554,7 +558,9 @@ void f()
 
 int main()
 {
-	testStlSet();
+
+	testValarray();
+
 	return 0;
 }
 
