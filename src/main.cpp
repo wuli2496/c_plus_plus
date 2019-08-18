@@ -39,6 +39,7 @@
 #include <vector>
 #include "base/funObj.h"
 #include "base/myvalarray.h"
+#include "algo/MathUtil.h"
 
 using namespace std;
 
@@ -559,7 +560,7 @@ void f()
 int main()
 {
 
-	testValarray();
+	cout << boolalpha << MathUtil::isPrime(23) << endl;
 
 	return 0;
 }
