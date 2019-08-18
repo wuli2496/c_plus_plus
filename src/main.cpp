@@ -559,9 +559,7 @@ void f()
 
 int main()
 {
-
-	cout << boolalpha << MathUtil::isPrime(23) << endl;
-
+	cout << MathUtil::genPanlind(100, true) << endl;
 	return 0;
 }
 
