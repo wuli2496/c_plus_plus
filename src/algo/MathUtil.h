@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include <vector>
 
 class MathUtil
 {
@@ -95,10 +96,43 @@ public:
         return ans;
     }
 
+    static void genPanlindRecur(int n, int sum, int leftexp, int rightexp, std::vector<int>& ans)
+    {
+        int num = 0;
+
+        if (n == 2)
+        {
+            for (int i = 0; i < N; ++i)
+            {
+                num = sum + leftexp * i + rightexp * i;
+                ans.push_back(num);
+            }
+            return;
+        }
+        else if (n == 1)
+        {
+            for (int i = 0; i < N; ++i)
+            {
+                num = sum + rightexp * i;
+                ans.push_back(num);
+            }
+            return;
+        }
+
+        int nRightExp = rightexp * 10;
+        int nLeftExp = leftexp / 10;
+        for (int i = 0; i < N; ++i)
+        {
+            num = sum + i * rightexp + i * leftexp;
+            genPanlindRecur(n - 2, num, nLeftExp, nRightExp, ans);
+        }
+    }
+
 private:
     enum
     {
-        MAXN = 30
+        MAXN = 30,
+        N = 10
     };
 
 
