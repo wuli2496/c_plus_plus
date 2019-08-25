@@ -559,7 +559,7 @@ void f()
 
 int main()
 {
-	cout << MathUtil::genPanlind(100, true) << endl;
+	cout << MathUtil::genPanlind(100, false) << endl;
 	return 0;
 }
 

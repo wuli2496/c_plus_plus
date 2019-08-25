@@ -14,56 +14,62 @@
 class MathUtil
 {
 public:
-    static bool isPrime(int num)
-    {
-       if (num % 2 == 0)
-       {
-           return false;
-       }
+	static bool isPrime(int num)
+	{
+		if (num == 2)
+		{
+			return true;
+		}
 
-       for (int i = 3; i * i <= num; i += 2)
-       {
-           if (num % i == 0)
-           {
-               return false;
-           }
-       }
+		if (num % 2 == 0)
+		{
+			return false;
+		}
 
-       return true;
-    }
+		for (int i = 3; i * i <= num; i += 2)
+		{
+			if (num % i == 0)
+			{
+				return false;
+			}
+		}
 
-    static int genPanlind(int num, bool odd)
-    {
-    	char buf[MAXN];
+		return true;
+	}
 
-    	sprintf(buf, "%d", num);
-    	char *p = buf + strlen(buf);
-    	char *q = p;
+	static int genPanlind(int num, bool odd)
+	{
+		char buf[MAXN];
 
-    	if (odd)
-    	{
-    		q -= 1;
-    	}
+		sprintf(buf, "%d", num);
+		char *p = buf + strlen(buf);
+		char *q = p;
 
-    	while (q > buf)
-    	{
-    		*p++ = *--q;
-    	}
+		if (odd)
+		{
+			q -= 1;
+		}
 
-    	*p = '\0';
+		while (q > buf)
+		{
+			*p++ = *--q;
+		}
 
-    	return atol(buf);
-    }
+		*p = '\0';
+
+		return atol(buf);
+	}
 
 private:
-    enum {
-    	MAXN = 30
-    };
+	enum
+	{
+		MAXN = 30
+	};
 
-    MathUtil();
-    ~MathUtil();
-    MathUtil(const MathUtil& other);
-    MathUtil& operator=(const MathUtil& other);
+	MathUtil();
+	~MathUtil();
+	MathUtil(const MathUtil& other);
+	MathUtil& operator=(const MathUtil& other);
 };
 
 #endif /* ALGO_MATHUTIL_H_ */
