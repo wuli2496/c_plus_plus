@@ -14,7 +14,7 @@ using namespace std;
 template <class T>
 void printValarray(const valarray<T>& va)
 {
-	for (int i = 0; i < va.size(); ++i)
+	for (size_t i = 0; i < va.size(); ++i)
 	{
 		cout << va[i] << ' ';
 	}

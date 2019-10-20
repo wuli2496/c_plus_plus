@@ -25,13 +25,6 @@ void testReference()
 	cout << ", rodents address = " << &rodents << endl;
 }
 
-void testRefInit()
-{
-	int rat;
-	//int& rodent;
-	//rodent = rat;
-}
-
 void testSecref()
 {
 	using namespace std;
@@ -70,6 +63,8 @@ void testRef2()
 	cout << "rodents = " << rodents << endl;
 
 	const int &b = rats + 10;
+
+	cout << b << endl;
 }
 
 

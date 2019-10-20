@@ -26,7 +26,7 @@ void testStlDeque()
 
 	coll.pop_front();
 	coll.pop_back();
-	for (int i = 1; i < coll.size(); ++i) {
+	for (size_t i = 1; i < coll.size(); ++i) {
 		coll[i] = "another " + coll[i];
 	}
 

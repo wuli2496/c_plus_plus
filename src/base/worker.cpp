@@ -52,7 +52,7 @@ void Waiter::Show() const
 	cout << "Panache rating: " << panache << endl;
 }
 
-char * Singer::pt[] = {"other", "alto", "contralto", "soprano", "bass", "baritone", "tenor"};
+char* Singer::pt[] = {"other", "alto", "contralto", "soprano", "bass", "baritone", "tenor"};
 
 void Singer::Set()
 {

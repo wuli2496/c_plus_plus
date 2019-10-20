@@ -23,7 +23,7 @@ void testConst()
 {
 
 	int a = 10;
-	const int **pp2;
+	const int **pp2 = NULL;
 	int *p1 = &a;
 	const int n = 13;
 	// invalid pp2 = &p1;
