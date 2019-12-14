@@ -12,6 +12,8 @@
 #include <cstring>
 #include <cstdlib>
 #include <vector>
+#include <string>
+#include <algorithm>
 
 class MathUtil
 {
@@ -128,6 +130,20 @@ public:
         }
     }
 
+    static std::string numToBin(int num)
+    {
+        std::string ans ;
+        while (num > 0)
+        {
+            int tmp = num % 2;
+            ans += char('0' + tmp);
+            num /= 2;
+        }
+
+        std::reverse(ans.begin(), ans.end());
+
+        return ans;
+    }
 private:
     enum
     {
