@@ -15,6 +15,7 @@ class DesignTest : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(DesignTest);
     CPPUNIT_TEST(compileTimeAssert);
+    CPPUNIT_TEST(convertTest);
     CPPUNIT_TEST_SUITE_END();
 public:
     DesignTest();
@@ -24,6 +25,8 @@ public:
     void tearDown();
 
     void compileTimeAssert();
+
+    void convertTest();
 
 };
 

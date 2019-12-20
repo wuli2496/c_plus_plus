@@ -4,7 +4,7 @@
 template<bool>
 struct CompileTimeChecker
 {
-	explicit CompileTimeChecker(...);
+	CompileTimeChecker(...);
 };
 
 template<>
@@ -20,10 +20,10 @@ struct CompileTimeChecker<false>
 }
 
 template <class To, class From>
-To safe_reinterpret_cast(From from)
+To safe_static_cast(From from)
 {
-	STATIC_CHECK(sizeof(From) < sizeof(To),
+	STATIC_CHECK(sizeof(From) <= sizeof(To),
 	        Destination_Type_Too_Narrow);
 
-	return reinterpret_cast<To>(from);
+	return static_cast<To>(from);
 }
