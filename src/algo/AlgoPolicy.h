@@ -17,4 +17,23 @@ public:
     virtual Result execute() = 0;
 };
 
+template<typename Result>
+class InputPolicy
+{
+public:
+    virtual ~InputPolicy() {}
+
+    virtual bool hasNext() = 0;
+
+    virtual Result next() = 0;
+};
+
+class OutputPolicy
+{
+public:
+    virtual ~OutputPolicy() {}
+
+    virtual void write() = 0;
+};
+
 #endif /* ALGO_ALGOPOLICY_H_ */
