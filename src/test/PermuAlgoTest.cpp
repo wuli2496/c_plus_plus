@@ -10,6 +10,7 @@
 #include <cppunit/TestAssert.h>
 #include "../algo/PermuAlgo.h"
 #include "../algo/PermuFactory.h"
+#include "../algo/CombFactory.h"
 #include <iostream>
 #include <memory>
 #include <string>
@@ -62,6 +63,7 @@ void PermuAlgoTest::testPermuAlgoPolicy()
     AlgoPolicy<vector<vector<int>>>* algo = PermuFactory::getInstance().create<int, AlgoPolicy>(string("dfs"), v);
     shared_ptr<AlgoPolicy<vector<vector<int>>>> sp(algo);
     auto ans = sp->execute();
+    cout << "------------perm---------" << endl;
     for (auto& v : ans)
     {
         for (auto& n : v)
@@ -70,4 +72,23 @@ void PermuAlgoTest::testPermuAlgoPolicy()
         }
         cout << endl;
     }
+    cout << "------------perm---------" << endl;
+}
+
+void PermuAlgoTest::testComb()
+{
+    int n = 3, k = 2;
+    AlgoPolicy<vector<vector<int>>>* algo = CombFactory::getInstance().create(string("dfs"), n, k);
+    shared_ptr<AlgoPolicy<vector<vector<int>>>> sp(algo);
+    auto ans = sp->execute();
+    cout << "------------comb---------" << endl;
+    for (auto& v : ans)
+    {
+        for (auto& n : v)
+        {
+            cout << n << " ";
+        }
+        cout << endl;
+    }
+    cout << "------------comb---------" << endl;
 }

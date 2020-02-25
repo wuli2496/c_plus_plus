@@ -16,11 +16,13 @@ class PermuAlgoTest : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(PermuAlgoTest);
     CPPUNIT_TEST(testPermuAlgo);
     CPPUNIT_TEST(testPermuAlgoPolicy);
+    CPPUNIT_TEST(testComb);
     CPPUNIT_TEST_SUITE_END();
 
 public:
     void testPermuAlgo();
     void testPermuAlgoPolicy();
+    void testComb();
 };
 
 #endif /* TEST_PERMUALGOTEST_H_ */
