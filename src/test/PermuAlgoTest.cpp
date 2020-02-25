@@ -9,7 +9,10 @@
 #include <vector>
 #include <cppunit/TestAssert.h>
 #include "../algo/PermuAlgo.h"
+#include "../algo/PermuFactory.h"
 #include <iostream>
+#include <memory>
+#include <string>
 
 using namespace std;
 
@@ -51,5 +54,20 @@ void PermuAlgoTest::testPermuAlgo()
 
     PermuAlgo<int, OutputVisitor> algo(v, outputVisitor);
     algo.execute();
+}
 
+void PermuAlgoTest::testPermuAlgoPolicy()
+{
+    vector<int> v = {1, 2, 3};
+    AlgoPolicy<vector<vector<int>>>* algo = PermuFactory::getInstance().create<int, AlgoPolicy>(string("dfs"), v);
+    shared_ptr<AlgoPolicy<vector<vector<int>>>> sp(algo);
+    auto ans = sp->execute();
+    for (auto& v : ans)
+    {
+        for (auto& n : v)
+        {
+            cout << n << " ";
+        }
+        cout << endl;
+    }
 }
