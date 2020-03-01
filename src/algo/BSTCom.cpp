@@ -56,4 +56,198 @@ vector<TreeNode*> BSTCom::generate(int l, int r)
     return result;
 }
 
+BSTComDp::BSTComDp(int n)
+{
+    this->n = n;
+}
+
+BSTComDp::~BSTComDp()
+{
+
+}
+
+vector<TreeNode*> BSTComDp::execute()
+{
+    if (n == 0)
+    {
+        return vector<TreeNode*>();
+    }
+
+    vector<TreeNode*> ans[n + 1];
+    ans[0].push_back(nullptr);
+
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = 0; j < i; ++j)
+        {
+            vector<TreeNode*> left = ans[j];
+            vector<TreeNode*> right = ans[i - 1 - j];
+            for (auto l : left)
+            {
+                for (auto w : right)
+                {
+                    TreeNode* node = new TreeNode(j + 1);
+                    node->left = l;
+                    node->right = clone(w, j + 1);
+                    ans[i].push_back(node);
+                }
+            }
+        }
+    }
+
+    return ans[n];
+}
+
+TreeNode* BSTComDp::clone(TreeNode* node, int offset)
+{
+    if (node == nullptr)
+    {
+        return nullptr;
+    }
+
+    TreeNode* root = new TreeNode(node->val + offset);
+    root->left = clone(node->left, offset);
+    root->right = clone(node->right, offset);
+
+    return root;
+}
+
+BSTComCounter::BSTComCounter(int n)
+{
+    this->n = n;
+}
+
+BSTComCounter::~BSTComCounter()
+{
+
+}
+
+int BSTComCounter::execute()
+{
+    if (n == 1)
+    {
+        return 1;
+    }
+
+    vector<int> ans(n + 1, 0);
+    ans[0] = 1;
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = 0; j < i; ++j)
+        {
+            ans[i] += ans[j] * ans[i - 1 - j];
+        }
+    }
+
+    return ans[n];
+}
+
+BSTChecker::BSTChecker(TreeNode* root)
+{
+    this->root = root;
+}
+
+BSTChecker::~BSTChecker()
+{
+
+}
+
+bool BSTChecker::execute()
+{
+    return isValid(root);
+}
+
+int BSTChecker::maxValue(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return numeric_limits<int>::max();
+    }
+
+    while (root->right != nullptr)
+    {
+        root = root->right;
+    }
+
+    return root->val;
+}
+
+int BSTChecker::minValue(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return numeric_limits<int>::min();
+    }
+
+    while (root->left != nullptr)
+    {
+        root = root->left;
+    }
+
+    return root->val;
+}
+
+bool BSTChecker::isValid(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return true;
+    }
+
+    if (root->left != nullptr)
+    {
+        if (maxValue(root->left) >= root->val)
+        {
+            return false;
+        }
+    }
+
+    if (root->right != nullptr)
+    {
+        if (minValue(root->right) <= root->val)
+        {
+            return false;
+        }
+    }
+
+    return isValid(root->left) && isValid(root->right);
+}
+
+BSTInOrderChecker::BSTInOrderChecker(TreeNode* root)
+{
+    this->root = root;
+    pre = nullptr;
+}
+
+BSTInOrderChecker::~BSTInOrderChecker()
+{
+
+}
+
+bool BSTInOrderChecker::execute()
+{
+    return isValid(root);
+}
+
+bool BSTInOrderChecker::isValid(TreeNode* root)
+{
+    if (root == nullptr)
+    {
+        return true;
+    }
+
+    if (!isValid(root->left))
+    {
+        return false;
+    }
+
+    if (pre != nullptr && pre->val >= root->val)
+    {
+        return false;
+    }
+
+    pre = root;
+
+    return isValid(root->right);
+}
 } /* namespace BST */
