@@ -67,7 +67,7 @@ public:
 
 private:
     int n;
-}
+};
 
 class BSTChecker : public AlgoPolicy<bool>
 {
